@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/barcode.css') }}">
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="content">
+            <div class="left">
+                <div class="position">
+                    <div class="position_left">
+                        <div class="item left_item item1">1</div>
+                    </div>
+                    <div class="position_right">
+                        <div class="item right_item item2">2</div>
+                        <div class="item right_item item3">3</div>
+                        <div class="item right_item item4">4</div>
+                        <div class="item right_item item5">5</div>
+                        <div class="item right_item item6">6</div>
+                    </div>
+                </div>
+                <div class="set">
+                    <div class="row1">
+                        <div class="row_num">1</div>
+                        <div class="row_set">
+                            <div class="set_content">
+                                <div class="set_title">X</div>
+                                <div class="set_text">50</div>
+                            </div>
+                            <div class="set_content">
+                                <div class="set_title">Y</div>
+                                <div class="set_text">50</div>
+                            </div>
+                            <div class="set_content">
+                                <div class="set_title">L</div>
+                                <div class="set_text">50</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row2">
+                        <div class="row_num">2</div>
+                        <div class="row_set">
+                            <div class="set_content">
+                                <div class="set_title">X</div>
+                                <div class="set_text">50</div>
+                            </div>
+                            <div class="set_content">
+                                <div class="set_title">Y</div>
+                                <div class="set_text">50</div>
+                            </div>
+                        </div>
+                        <div class="row_set">
+                            <div class="set_content">
+                                <div class="set_title">W</div>
+                                <div class="set_text">50</div>
+                            </div>
+                            <div class="set_content">
+                                <div class="set_title">H</div>
+                                <div class="set_text">50</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row2">
+                        <div class="row_num">3</div>
+                        <div class="row_set">
+                            <div class="set_content">
+                                <div class="set_title">X</div>
+                                <div class="set_text">50</div>
+                            </div>
+                            <div class="set_content">
+                                <div class="set_title">Y</div>
+                                <div class="set_text">50</div>
+                            </div>
+                        </div>
+                        <div class="row_set">
+                            <div class="set_content">
+                                <div class="set_title">W</div>
+                                <div class="set_text">50</div>
+                            </div>
+                            <div class="set_content">
+                                <div class="set_title">H</div>
+                                <div class="set_text">50</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row2">
+                        <div class="row_num">4</div>
+                        <div class="row_set">
+                            <div class="set_content">
+                                <div class="set_title">X</div>
+                                <div class="set_text">50</div>
+                            </div>
+                            <div class="set_content">
+                                <div class="set_title">Y</div>
+                                <div class="set_text">50</div>
+                            </div>
+                        </div>
+                        <div class="row_set">
+                            <div class="set_content">
+                                <div class="set_title">W</div>
+                                <div class="set_text">50</div>
+                            </div>
+                            <div class="set_content">
+                                <div class="set_title">H</div>
+                                <div class="set_text">50</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row2">
+                        <div class="row_num">5</div>
+                        <div class="row_set">
+                            <div class="set_content">
+                                <div class="set_title">X</div>
+                                <div class="set_text">50</div>
+                            </div>
+                            <div class="set_content">
+                                <div class="set_title">Y</div>
+                                <div class="set_text">50</div>
+                            </div>
+                        </div>
+                        <div class="row_set">
+                            <div class="set_content">
+                                <div class="set_title">W</div>
+                                <div class="set_text">50</div>
+                            </div>
+                            <div class="set_content">
+                                <div class="set_title">H</div>
+                                <div class="set_text">50</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row2">
+                        <div class="row_num">6</div>
+                        <div class="row_set">
+                            <div class="set_content">
+                                <div class="set_title">X</div>
+                                <div class="set_text">50</div>
+                            </div>
+                            <div class="set_content">
+                                <div class="set_title">Y</div>
+                                <div class="set_text">50</div>
+                            </div>
+                        </div>
+                        <div class="row_set">
+                            <div class="set_content">
+                                <div class="set_title">W</div>
+                                <div class="set_text">50</div>
+                            </div>
+                            <div class="set_content">
+                                <div class="set_title">H</div>
+                                <div class="set_text">50</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box_btn">
+                    <button>TEST</button>
+                    <button>SAVE</button>
+                </div>
+            </div>
+            <div class="right">
+                <div class="date">
+                    <div class="date_title">DATE</div>
+                    <div class="date_text">
+                        <!-- 날짜 선택 input 추가 -->
+                        <input type="date" id="datePicker">
+                    </div>
+                </div>
+                <div class="lot">
+                    <div class="lot_title">LOT START</div>
+                    <div class="lot_text">
+                        <!-- 누르면 수량 입력할 수 있게 키보드 띄움 -->
+                        <input type="number" id="lotInput" placeholder="수량 입력" onfocus="this.select()">
+                    </div>
+                </div>
+                <div class="part">
+                    <div class="part_title">PART NUMBER</div>
+                    <div class="part_text">
+                        <!-- 누르면 부품 고를 수 있게 드롭박스 뜸 -->
+                        <select id="partSelect">
+                            <option value="">부품 선택</option>
+                            <option value="part1">부품 1</option>
+                            <option value="part2">부품 2</option>
+                            <option value="part3">부품 3</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="qty">
+                    <div class="qty_title">QTY</div>
+                    <div class="qty_text">
+                        <!-- 상한치 하한치에 맞추어 토크값 자동 생성 -->
+                        <input type="number" id="Torque" placeholder="토크값">
+                    </div>
+                </div>
+                <!-- 프린트 버튼 -->
+                <button id="printButton">PRINT</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#printButton').on('click', function() {
+                $.post('/print', function(data) {
+                    alert(data.message);
+                }).fail(function() {
+                    alert('프린터 출력 요청 실패.');
+                });
+            });
+        });
+    </script>
+    
+</body>
+
+</html>

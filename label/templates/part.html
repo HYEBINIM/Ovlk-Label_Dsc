@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부품 리스트</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/part.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <table>
+                <thead>
+                    <tr>
+                        <th>품번</th>
+                        <th>품명</th>
+                        <th>옵션1</th>
+                        <th>PART_COUNT</th>
+                        <th>OPTION_BRK</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>001</td>
+                        <td>부품A</td>
+                        <td>옵션1A</td>
+                        <td>10</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>002</td>
+                        <td>부품B</td>
+                        <td>옵션1B</td>
+                        <td>5</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>002</td>
+                        <td>부품B</td>
+                        <td>옵션1B</td>
+                        <td>5</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>002</td>
+                        <td>부품B</td>
+                        <td>옵션1B</td>
+                        <td>5</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>002</td>
+                        <td>부품B</td>
+                        <td>옵션1B</td>
+                        <td>5</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>002</td>
+                        <td>부품B</td>
+                        <td>옵션1B</td>
+                        <td>5</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>002</td>
+                        <td>부품B</td>
+                        <td>옵션1B</td>
+                        <td>5</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>002</td>
+                        <td>부품B</td>
+                        <td>옵션1B</td>
+                        <td>5</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>002</td>
+                        <td>부품B</td>
+                        <td>옵션1B</td>
+                        <td>5</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <!-- 추가 부품 행 -->
+                </tbody>
+            </table>
+        </div>
+        <div class="right-panel">
+            <h2>T/Q</h2>
+            <table>
+                <tbody>
+                    <tr>
+                        <td><label for="min">MIN:</label></td>
+                        <td><input type="text" id="min"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="max">MAX:</label></td>
+                        <td><input type="text" id="max"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="unit">UNIT:</label></td>
+                        <td><input type="text" id="unit"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="save-button">SAVE</button>
+        </div>
+    </div>
+</body>
+</html>

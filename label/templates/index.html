@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="main">
+            <button id="part_button">부품설정</button>
+            <button id="barcode_button">바코드설정</button>
+        </div>
+            <div id="part_overlay" class="overlay"></div>
+                <div id="part_modal" class="modal">
+                    <div class="close"><span class="btn_close" id="part_close">&times;</span></div>
+                    <iframe src="{{ url_for('part') }}"></iframe>
+                </div>
+            
+
+            <div id="barcode_overlay" class="overlay"></div>
+                <div id="barcode_modal" class="modal">
+                    <div class="close"><span class="btn_close" id="barcode_close">&times;</span></div>
+                    <iframe src="{{ url_for('barcode') }}"></iframe>
+                </div>
+            
+    </div>
+
+    <script>
+        // 모달 제어
+        const partButton = document.getElementById('part_button');
+        const barcodeButton = document.getElementById('barcode_button');
+        const partOverlay = document.getElementById('part_overlay');
+        const barcodeOverlay = document.getElementById('barcode_overlay');
+        const partModal = document.getElementById('part_modal');
+        const barcodeModal = document.getElementById('barcode_modal');
+        const partClose = document.getElementById('part_close');
+        const barcodeClose = document.getElementById('barcode_close');
+
+        partButton.onclick = function() {
+            partOverlay.style.display = "flex";
+            partModal.style.display = "flex";
+        }
+
+        barcodeButton.onclick = function() {
+            barcodeOverlay.style.display = "flex";
+            barcodeModal.style.display = "flex";
+        }
+
+        partClose.onclick = function() {
+            partOverlay.style.display = "none";
+            partModal.style.display = "none";
+        }
+
+        barcodeClose.onclick = function() {
+            barcodeOverlay.style.display = "none";
+            barcodeModal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == partModal) {
+                partModal.style.display = "none";
+            }
+            if (event.target == barcodeModal) {
+                barcodeModal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>
