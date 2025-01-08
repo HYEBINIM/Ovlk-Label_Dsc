@@ -1,3 +1,4 @@
+# 스캐너 스캔 코드
 import serial
 
 def main():

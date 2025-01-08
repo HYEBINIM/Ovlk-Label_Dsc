@@ -26,196 +26,159 @@
                     </div>
                 </div>
                 <div class="set">
-                    <div class="row1">
-                        <div class="row_num">1</div>
-                        <div class="row_set">
-                            <div class="set_content">
-                                <div class="set_title">X</div>
-                                <div class="set_text">50</div>
-                            </div>
-                            <div class="set_content">
-                                <div class="set_title">Y</div>
-                                <div class="set_text">50</div>
-                            </div>
-                            <div class="set_content">
-                                <div class="set_title">L</div>
-                                <div class="set_text">50</div>
-                            </div>
-                        </div>
-                    </div>
+                    {% for i in range(6) %}
                     <div class="row2">
-                        <div class="row_num">2</div>
+                        <div class="row_num">{{ i + 1 }}</div>
                         <div class="row_set">
                             <div class="set_content">
                                 <div class="set_title">X</div>
-                                <div class="set_text">50</div>
+                                <div class="set_text">
+                                    <input type='text' class="x_value" value="{{ positions[i][0] if positions[i] else '' }}">
+                                </div>
                             </div>
                             <div class="set_content">
                                 <div class="set_title">Y</div>
-                                <div class="set_text">50</div>
+                                <div class="set_text">
+                                    <input type='text' class="y_value" value="{{ positions[i][1] if positions[i] else '' }}">
+                                </div>
                             </div>
                         </div>
                         <div class="row_set">
                             <div class="set_content">
                                 <div class="set_title">W</div>
-                                <div class="set_text">50</div>
+                                <div class="set_text">
+                                    <input type='text' class="w_value" value="{{ positions[i][2] if positions[i] else '' }}">
+                                </div>
                             </div>
                             <div class="set_content">
                                 <div class="set_title">H</div>
-                                <div class="set_text">50</div>
+                                <div class="set_text">
+                                    <input type='text' class="h_value" value="{{ positions[i][3] if positions[i] else '' }}">
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row2">
-                        <div class="row_num">3</div>
-                        <div class="row_set">
-                            <div class="set_content">
-                                <div class="set_title">X</div>
-                                <div class="set_text">50</div>
-                            </div>
-                            <div class="set_content">
-                                <div class="set_title">Y</div>
-                                <div class="set_text">50</div>
-                            </div>
-                        </div>
-                        <div class="row_set">
-                            <div class="set_content">
-                                <div class="set_title">W</div>
-                                <div class="set_text">50</div>
-                            </div>
-                            <div class="set_content">
-                                <div class="set_title">H</div>
-                                <div class="set_text">50</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row2">
-                        <div class="row_num">4</div>
-                        <div class="row_set">
-                            <div class="set_content">
-                                <div class="set_title">X</div>
-                                <div class="set_text">50</div>
-                            </div>
-                            <div class="set_content">
-                                <div class="set_title">Y</div>
-                                <div class="set_text">50</div>
-                            </div>
-                        </div>
-                        <div class="row_set">
-                            <div class="set_content">
-                                <div class="set_title">W</div>
-                                <div class="set_text">50</div>
-                            </div>
-                            <div class="set_content">
-                                <div class="set_title">H</div>
-                                <div class="set_text">50</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row2">
-                        <div class="row_num">5</div>
-                        <div class="row_set">
-                            <div class="set_content">
-                                <div class="set_title">X</div>
-                                <div class="set_text">50</div>
-                            </div>
-                            <div class="set_content">
-                                <div class="set_title">Y</div>
-                                <div class="set_text">50</div>
-                            </div>
-                        </div>
-                        <div class="row_set">
-                            <div class="set_content">
-                                <div class="set_title">W</div>
-                                <div class="set_text">50</div>
-                            </div>
-                            <div class="set_content">
-                                <div class="set_title">H</div>
-                                <div class="set_text">50</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row2">
-                        <div class="row_num">6</div>
-                        <div class="row_set">
-                            <div class="set_content">
-                                <div class="set_title">X</div>
-                                <div class="set_text">50</div>
-                            </div>
-                            <div class="set_content">
-                                <div class="set_title">Y</div>
-                                <div class="set_text">50</div>
-                            </div>
-                        </div>
-                        <div class="row_set">
-                            <div class="set_content">
-                                <div class="set_title">W</div>
-                                <div class="set_text">50</div>
-                            </div>
-                            <div class="set_content">
-                                <div class="set_title">H</div>
-                                <div class="set_text">50</div>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
                 <div class="box_btn">
-                    <button>TEST</button>
-                    <button>SAVE</button>
+                    <button id="btn_save">SAVE</button>
                 </div>
             </div>
             <div class="right">
                 <div class="date">
                     <div class="date_title">DATE</div>
                     <div class="date_text">
-                        <!-- 날짜 선택 input 추가 -->
                         <input type="date" id="datePicker">
                     </div>
                 </div>
                 <div class="lot">
                     <div class="lot_title">LOT START</div>
                     <div class="lot_text">
-                        <!-- 누르면 수량 입력할 수 있게 키보드 띄움 -->
-                        <input type="number" id="lotInput" placeholder="수량 입력" onfocus="this.select()">
+                        <input type="text" id="lotInput" placeholder="값을 입력하세요" onfocus="this.select()">
                     </div>
                 </div>
                 <div class="part">
                     <div class="part_title">PART NUMBER</div>
                     <div class="part_text">
-                        <!-- 누르면 부품 고를 수 있게 드롭박스 뜸 -->
                         <select id="partSelect">
                             <option value="">부품 선택</option>
-                            <option value="part1">부품 1</option>
-                            <option value="part2">부품 2</option>
-                            <option value="part3">부품 3</option>
+                            {% for part in product_list %}
+                            <option value="{{ part[0] }}" data-part-name="{{ part[1] }}">{{ part[0] }} ({{ part[1] }})</option>
+                            {% endfor %}
                         </select>
                     </div>
                 </div>
                 <div class="qty">
                     <div class="qty_title">QTY</div>
                     <div class="qty_text">
-                        <!-- 상한치 하한치에 맞추어 토크값 자동 생성 -->
-                        <input type="number" id="Torque" placeholder="토크값">
+                        <input type="text" id="qtyInput" placeholder="수량 입력">
                     </div>
                 </div>
-                <!-- 프린트 버튼 -->
-                <button id="printButton">PRINT</button>
+                <button id="btn_print">PRINT</button>
             </div>
         </div>
     </div>
 
     <script>
         $(document).ready(function() {
-            $('#printButton').on('click', function() {
-                $.post('/print', function(data) {
-                    alert(data.message);
-                }).fail(function() {
-                    alert('프린터 출력 요청 실패.');
+            // 오늘 날짜를 기본값으로 설정
+            const today = new Date().toISOString().split('T')[0];
+            $('#datePicker').val(today);
+
+            $('#btn_save').on('click', function() {
+                const positions = [];
+                $('.row2').each(function(index) {
+                    const x = $(this).find('.x_value').val();
+                    const y = $(this).find('.y_value').val();
+                    const w = $(this).find('.w_value').val();
+                    const h = $(this).find('.h_value').val();
+
+                    if (x && y && w && h) {
+                        positions.push(`${x},${y},${w},${h}`);
+                    } else {
+                        positions.push('0,0,0,0');
+                    }
+                });
+
+                console.log(positions);
+
+                $.ajax({
+                    url: '/save_barcode_positions',
+                    type: 'POST',
+                    data: {
+                        positions: positions
+                    },
+                    traditional: true,
+                    success: function(data) {
+                        alert(data.message);
+                    },
+                    error: function() {
+                        alert('데이터 저장 요청 실패.');
+                    }
+                });
+            });
+
+            $('#btn_print').on('click', function() {
+                const selectedOption = $('#partSelect option:selected');
+                const partNumber = selectedOption.val(); // 선택된 part[0] (ID)
+                const partName = selectedOption.data('part-name'); // 선택된 part[1] (이름)
+
+                const positions = [];
+                $('.row2').each(function() {
+                    const x = $(this).find('.x_value').val() || '0'; // X 값
+                    const y = $(this).find('.y_value').val() || '0'; // Y 값
+                    const w = $(this).find('.w_value').val() || '0'; // W 값
+                    const h = $(this).find('.h_value').val() || '0'; // H 값
+                    positions.push(`${x},${y},${w},${h}`);
+                });
+
+                // PRINT 요청 전송
+                const requestData = {
+                    date: $('#datePicker').val(), // 날짜 입력 필드의 값
+                    lotStart: $('#lotInput').val(), // LOT START 입력 필드의 값
+                    partNumber: partNumber,
+                    partName: partName,
+                    qty: $('#qtyInput').val(), // 수량 입력 필드의 값
+                    positions: positions
+                };
+
+                console.log('Request Data:', requestData);  // 요청 데이터 출력
+
+                $.ajax({
+                    url: '/print',
+                    type: 'POST',
+                    data: requestData,
+                    success: function(data) {
+                        alert(data.message);
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        console.error('Error Status:', textStatus);
+                        console.error('Error Thrown:', errorThrown);
+                        alert('프린터 출력 요청 실패.');
+                    }
                 });
             });
         });
-    </script>
-    
-</body>
-
+        </script>
+    </body>
 </html>

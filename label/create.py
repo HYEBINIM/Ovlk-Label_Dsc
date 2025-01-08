@@ -1,3 +1,4 @@
+# flask 디렉토리 생성 코드
 import os
 
 def create_flask_project(project_name):
