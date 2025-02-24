@@ -247,7 +247,7 @@ def print_lh(lh_data):
         ^FO145,70^A0N,20,22^FD D_RH NA TER RMT H1R ^FS
         ^FO145,100^A0N,25,23^FD {today}{str((int(lh_count) + 1)).zfill(4)}   {lh_zig} ^FS
         ^FO145,130^A0N,25,23^FD DSC Co.Ltd,.^FS
-        ^FO20,25^BXN,3,200^FH_^FD[)>_1E06_1DVPB31_1DP{lh_code}_1DS_1DE_1DT{today}G1A1A{str((int(lh_count) + 1)).zfill(7)}_1DA_1DC0.00.0_1D_1E_04^FS     
+        ^FO20,25^BXN,3,200^FH_^FD[)>_1E06_1DVPB31_1DP{lh_code}_1DS_1DE_1DT{today}G1A1A{str((int(lh_count) + 1)).zfill(7)}_1DA_1DC00.000.0_1D_1E_04^FS     
         ^XZ
         """
 
@@ -293,7 +293,7 @@ def print_rh(rh_data):
         ^FO145,70^A0N,20,22^FD D_RH NA TER RMT H1R ^FS
         ^FO145,100^A0N,25,23^FD {today}{str((int(rh_count) + 1)).zfill(4)}   {rh_zig} ^FS
         ^FO145,130^A0N,25,23^FD DSC Co.Ltd,.^FS
-        ^FO20,25^BXN,3,200^FH_^FD[)>_1E06_1DVPB31_1DP{rh_code}_1DS_1DE_1DT{today}G1A1A{str((int(rh_count) + 1)).zfill(7)}_1DA_1DC0.00.0_1D_1E_04^FS     
+        ^FO20,25^BXN,3,200^FH_^FD[)>_1E06_1DVPB31_1DP{rh_code}_1DS_1DE_1DT{today}G1A1A{str((int(rh_count) + 1)).zfill(7)}_1DA_1DC00.000.0_1D_1E_04^FS     
         ^XZ
         """
 
