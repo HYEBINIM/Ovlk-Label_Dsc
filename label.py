@@ -109,8 +109,8 @@ def print_label():
         ^XA
         ^CF0,20
         ^FO145,20^A0N,40,32^FD {data2_value} ^FS
-        ^FO145,65^A0N,20,22^FD D_RH NA TER RMT H1R ^FS
-        ^FO145,95^A0N,25,23^FD {data5_value}{str(int(data['data8'])).zfill(4)}   {data10} ^FS
+        ^FO145,65^A0N,20,22^FD  ^FS
+        ^FO145,95^A0N,25,23^FD {data5_value}{str(int(data['data8'])).zfill(4)}   ST{data10} ^FS
         ^FO145,125^A0N,25,23^FD DSC Co.Ltd,.^FS
         ^FO20,25^BXN,3,200^FH_^FD[)>_1E06_1DV{data['data1']}_1DP{data['data2']}_1DS{data['data3']}_1DE{data['data4']}_1DT{data5_value}{data['data6']}{data['data7']}{str(int(data['data8'])).zfill(7)}_1DA_1DC{data['data9']}_1D_1E_04^FS     
         ^XZ

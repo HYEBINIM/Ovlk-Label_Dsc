@@ -147,7 +147,8 @@ def get_lh_num():
             lh_zig = res[1]
             lh_id = res[2]
             
-            print(f"LH스캔: {lh_scan} 카운트: {int(lh_count)} 인덱스: {lh_id} 지그: {lh_zig}")
+            print(f"LH스캔: {lh_scan}")
+            print(f"카운트: {int(lh_count)} 인덱스: {lh_id} 지그: {lh_zig}")
             try:
                 conn_kiosk = mysql.connector.connect(**db_conn_kiosk)
                 cursor_kiosk = conn_kiosk.cursor()
@@ -223,7 +224,8 @@ def get_rh_num():
             rh_zig = res[1]
             rh_id = res[2]
             
-            print(f"rh스캔: {rh_scan} 카운트: {int(rh_count)} 인덱스: {rh_id} 지그: {rh_zig}")
+            print(f"rh스캔: {rh_scan}")
+            print(f"카운트: {int(rh_count)} 인덱스: {rh_id} 지그: {rh_zig}")
             try:
                 conn_kiosk = mysql.connector.connect(**db_conn_kiosk)
                 cursor_kiosk = conn_kiosk.cursor()
@@ -278,14 +280,13 @@ def get_rh_num():
 def format_torque(value):
     if value is None:
         return "00.0"
-    
+
     value = float(value)  # 문자열을 실수형으로 변환
-    
-    # 소수점 이하 두 자리까지 포맷팅
-    if value < 10:
-        return f"0{int(value)}.{int((value * 100) % 100):02d}"
-    else:
-        return f"{int(value // 10)}.{int((value * 100) % 100):02d}"
+
+    # 100으로 나누고 소수점 한 자리까지 포맷팅
+    value /= 100.0  # 100으로 나누기
+    return f"{value:04.1f}"  # 소수점 한 자리까지 포맷팅 (총 4자리 중 1자리 소수점)
+
 
 def print_lh(lh_data):
     try:
@@ -296,17 +297,6 @@ def print_lh(lh_data):
             return
 
         lh_code, lh_count, lh_id, lh_zig, lh_torq1, lh_torq2 = lh_data  # unpacking
-
-        # None 체크 및 형식 지정
-        try:
-            lh_torq1 = float(lh_torq1) if lh_torq1 is not None else 0.0
-        except ValueError:
-            lh_torq1 = 0.0
-            
-        try:
-            lh_torq2 = float(lh_torq2) if lh_torq2 is not None else 0.0
-        except ValueError:
-            lh_torq2 = 0.0
 
         # 포맷팅 함수 호출
         lh_torq1_str = format_torque(lh_torq1)
@@ -330,9 +320,9 @@ def print_lh(lh_data):
         ^CF0,20
         ^FO145,25^A0N,40,32^FD {lh_code_value} ^FS
         ^FO145,70^A0N,20,22^FD D_RH NA TER RMT H1R ^FS
-        ^FO145,100^A0N,25,23^FD {today}{str((int(lh_count) + 1)).zfill(4)}   ST{lh_zig} ^FS
+        ^FO145,100^A0N,25,23^FD {today}{str((int(lh_count))).zfill(4)}   ST{lh_zig} ^FS
         ^FO145,130^A0N,25,23^FD DSC Co.Ltd,.^FS
-        ^FO20,25^BXN,3,200^FH_^FD[)>_1E06_1DVPB31_1DP{lh_code}_1DS_1DE_1DT{today}G1A1A{str((int(lh_count) + 1)).zfill(7)}_1DA_1DC{lh_torq1_str}{lh_torq2_str}_1D_1E_04^FS     
+        ^FO20,25^BXN,3,200^FH_^FD[)>_1E06_1DVPB31_1DP{lh_code}_1DS_1DE_1DT{today}G1A1A{str((int(lh_count))).zfill(7)}_1DA_1DC{lh_torq1_str}{lh_torq2_str}_1D_1E_04^FS     
         ^XZ
         """
         print(f"{time} 출력토크1: {lh_torq1_str} 출력토크2: {lh_torq2_str}")
@@ -397,9 +387,9 @@ def print_rh(rh_data):
         ^CF0,20
         ^FO145,25^A0N,40,32^FD {rh_code_value} ^FS
         ^FO145,70^A0N,20,22^FD D_RH NA TER RMT H1R ^FS
-        ^FO145,100^A0N,25,23^FD {today}{str((int(rh_count) + 1)).zfill(4)}   ST{rh_zig} ^FS
+        ^FO145,100^A0N,25,23^FD {today}{str((int(rh_count))).zfill(4)}   ST{rh_zig} ^FS
         ^FO145,130^A0N,25,23^FD DSC Co.Ltd,.^FS
-        ^FO20,25^BXN,3,200^FH_^FD[)>_1E06_1DVPB31_1DP{rh_code}_1DS_1DE_1DT{today}G1A1A{str((int(rh_count) + 1)).zfill(7)}_1DA_1DC{rh_torq1_str}{rh_torq2_str}_1D_1E_04^FS     
+        ^FO20,25^BXN,3,200^FH_^FD[)>_1E06_1DVPB31_1DP{rh_code}_1DS_1DE_1DT{today}G1A1A{str((int(rh_count))).zfill(7)}_1DA_1DC{rh_torq1_str}{rh_torq2_str}_1D_1E_04^FS     
         ^XZ
         """
 
